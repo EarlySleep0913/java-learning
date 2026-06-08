@@ -1,5 +1,7 @@
 package com.earlysleep.SwitchDemo;
 
+import java.util.Scanner;
+
 public class SwitchDemo2 {
     public static void main(String[] args) {
         //**switch的扩展知识：**
@@ -26,6 +28,29 @@ public class SwitchDemo2 {
 
         //switch可以有运行结果
         //yield关键字
+        //模拟计算器
+
+        int a1 = 10;
+        int b1 = 20;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入运算符：");
+        char op = sc.next().charAt(0);
+
+        int result = switch (op){
+            case '+' -> a1 +  b1;
+            case '-' -> a1 -  b1;
+            case '*' -> a1 *  b1;
+            case '/' -> a1 /  b1;
+            default -> {
+                System.out.println("输入的运算符有误");
+                yield 0;
+            }
+
+        };
+
+        System.out.println( result);
+
 
 
     }
